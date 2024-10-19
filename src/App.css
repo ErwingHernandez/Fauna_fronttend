@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #228B22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+li{
+  list-style: none;
+}
+
+
+.App {
+    background-color: #34bdc9;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+
+}
+
+.container{
+  background-color: #228B22;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.card img {
+  padding: 10px;
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 50px;
+  height: auto;
+}
+
+
+.card{
+  display: inline;
+  width: 25rem;
+  padding: 10px;
+  color: white;
+}
+
+.card h1 {
+  font-size: 24px;
+ 
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 16px;
+  
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 18px;
+ 
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  
+}
+
+.card h3 {
+  font-size: 14px;
+
+  margin-bottom: 10px;
+}
