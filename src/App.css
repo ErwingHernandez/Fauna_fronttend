@@ -1,84 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #228B22;
+.App {
+  background-color: #222;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
-li{
-  list-style: none;
+.carousel {
+  display: flex;
+  gap: 50px;
+  position: relative;
 }
 
-
-.App {
-    background-color: #34bdc9;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-
+.card {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
 }
 
-.container{
-  background-color: #228B22;
+.animal-card {
+  position: relative;
+  text-align: center;
+}
+
+.animal-image {
+  width: 150px;
+  height: 100px;
+  margin: 0;
+  object-fit: cover;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.card img {
-  padding: 10px;
-  margin-top: 10px;
-  max-width: 100%;
-  border-radius: 50px;
+.selected-image {
+  transform: scale(1.2);
+  z-index: 1; 
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+.animal-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.expanded-image {
+  width: 50vw;
   height: auto;
-}
-
-
-.card{
-  display: inline;
-  width: 25rem;
-  padding: 10px;
-  color: white;
-}
-
-.card h1 {
-  font-size: 24px;
- 
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 16px;
-  
-  margin-bottom: 10px;
-}
-
-.card h2 {
-  font-size: 18px;
- 
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 16px;
-  line-height: 1.5;
-  
-}
-
-.card h3 {
-  font-size: 14px;
-
-  margin-bottom: 10px;
+  box-shadow: 0px 4px 10px rgba(231, 36, 36, 0.959);
 }
