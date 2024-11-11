@@ -23,29 +23,58 @@ function App() {
 
               // Animación para la imagen expandida (escala y posicionamiento detrás de otras imágenes)
               const expandAnimation = useSpring({
-                transform: isExpanded ? 'scale(3.2)' : 'scale(1)',
-                config: { mass: 1, tension: 200, friction: 10 },
+                transform: isExpanded ? `translateY(50px) scale(1.5)` : 'translateY(0) scale(1)',
+                opacity: isExpanded ? 1 : 0.8,
+                zindex: isExpanded ? 1 : -1,
+                config: { mass: 1, tension: 100, friction: 10, duration: 300 },
               });
+
+              // Animación de entrada para animal-details
+              const detailsAnimation = useSpring({
+                opacity: isExpanded ? 1 : 0,
+                transform: isExpanded ? 'translateY(0)' : 'translateY(20px)',
+                config: { tension: 120, friction: 14 },
+              });
+
 
               return (
                 <li key={fauna._id} className="animal-card">
-                  
-                  <animated.img
-                    src={fauna.imagen}
-                    alt={fauna.nombre}
-                    className= "animal-image" 
-                    onClick={() => handleToggle(fauna._id)}
-                    style={expandAnimation}
-                  />
-                   {isExpanded && (
-                    <div style={expandAnimation} className="animal-details">
+                  <div className="imagen-container">
+                    <animated.img
+                      src={fauna.imagen}
+                      alt={fauna.nombre}
+                      className="animal-image"
+                      onClick={() => handleToggle(fauna._id)}
+                      style={expandAnimation}
+                    />
+
+                  </div>
+
+                  {isExpanded && (
+                    <animated.div style={detailsAnimation} className="animal-details">
                       <button className="close-button" onClick={() => setExpandedId(null)}>X</button>
-                      <h1>{fauna.nombre}</h1>
-                      <h2>{fauna.nombreCientifico}</h2>
-                      <p>{fauna.descripcion}</p>
-                      <h3>Hábitat: {fauna.habitat}</h3>
-                      <h3>Ubicación: {fauna.ubicacion}</h3>
-                    </div>
+
+                      <div className='animal-title'>
+                        <h1>{fauna.nombre}</h1>
+                      </div>
+
+                      <div className='animal-subtitles'>
+                        <div className='animal-subtitle-container'>
+                          <h3>{fauna.nombreCientifico}</h3>
+                          <h3>Hábitat</h3>
+                          <h3>Ubicación</h3>
+                        </div>
+                      </div>
+
+                      <div className='animal-info'>
+                        <div className='animal-info-container'>
+                          <p id='descripcion'>{fauna.descripcion}</p>
+                          <p id='habitat'>{fauna.habitat}</p>
+                          <p id='ubicacion'>{fauna.ubicacion}</p>
+                        </div>
+
+                      </div>
+                    </animated.div>
                   )}
                 </li>
               );
