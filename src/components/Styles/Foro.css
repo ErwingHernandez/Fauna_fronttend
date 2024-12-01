@@ -1,0 +1,159 @@
+
+.container {
+    width: 100vw;
+    height: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: #333333ab;
+}
+
+header {
+   
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+p {
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Formulario */
+.suggestion-form {
+    width: 100%;
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+}
+
+
+
+
+.suggestion-form div {
+    margin-bottom: 15px;
+}
+
+.suggestion-form label {
+    font-weight: bold;
+}
+
+.suggestion-form input,
+.suggestion-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+.suggestion-form textarea {
+    overflow: hidden;
+    resize: none;
+    height: auto;
+}
+
+
+.button-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.suggestion-form button {
+    
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.suggestion-form button:hover {
+    background-color: #45a049;
+}
+
+/* Mensajes */
+.message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #e74c3c;
+}
+
+/* Filtro */
+.filter-section {
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.filter-section select {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+section {
+    scrollbar-width: thin;
+    border-radius: 20px;
+    width: 100vw;
+    max-width: 600px;
+    margin-top: 30px;
+    padding: 10px;
+    max-height: 400px; 
+    overflow-y: auto;  
+}
+
+
+
+/* Lista de sugerencias */
+.suggestion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #dfdc8b8a;
+}
+
+
+
+.suggestion-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.suggestion-card p {
+    font-size: 1.1em;
+    color: white;
+}
+
+.suggestion-card small {
+    font-size: 0.9em;
+    color: white;
+}
+
+.suggestion-form button,
+.filter-section select {
+    width: 100%;
+    max-width: 300px;
+}
